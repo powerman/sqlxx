@@ -9,7 +9,7 @@ require (
 	github.com/lib/pq v1.1.1 // indirect
 	github.com/mattn/go-sqlite3 v1.10.0 // indirect
 	github.com/pkg/errors v0.9.1 // indirect
-	github.com/powerman/check v1.2.1
+	github.com/powerman/check v1.3.1
 	github.com/smartystreets/assertions v1.0.1 // indirect
 	github.com/smartystreets/goconvey v1.6.4
 	golang.org/x/sys v0.0.0-20200124204421-9fbb57f87de9 // indirect
