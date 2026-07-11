@@ -23,7 +23,7 @@ func NewDB(db *sqlx.DB) *DB {
 
 // NamedIn expands slice values in arg returning the modified query string
 // and a new arg list that can be executed by a database.
-func (db *DB) NamedIn(queryIn string, arg interface{}) (query string, args []interface{}, err error) {
+func (db *DB) NamedIn(queryIn string, arg any) (query string, args []any, err error) {
 	query, args, err = sqlx.Named(queryIn, arg)
 	if err == nil {
 		query, args, err = sqlx.In(query, args...)
@@ -34,7 +34,7 @@ func (db *DB) NamedIn(queryIn string, arg interface{}) (query string, args []int
 // NamedGetContext using this DB.
 // Any named placeholder parameters are replaced with fields from arg.
 // An error is returned if the result set is empty.
-func (db *DB) NamedGetContext(ctx Ctx, dest interface{}, query string, arg interface{}) error {
+func (db *DB) NamedGetContext(ctx Ctx, dest any, query string, arg any) error {
 	query, args, err := db.BindNamed(query, arg)
 	if err == nil {
 		err = db.GetContext(ctx, dest, query, args...)
@@ -44,7 +44,7 @@ func (db *DB) NamedGetContext(ctx Ctx, dest interface{}, query string, arg inter
 
 // NamedSelectContext using this DB.
 // Any named placeholder parameters are replaced with fields from arg.
-func (db *DB) NamedSelectContext(ctx Ctx, dest interface{}, query string, arg interface{}) error {
+func (db *DB) NamedSelectContext(ctx Ctx, dest any, query string, arg any) error {
 	query, args, err := db.BindNamed(query, arg)
 	if err == nil {
 		err = db.SelectContext(ctx, dest, query, args...)
@@ -68,7 +68,7 @@ type Tx struct {
 
 // NamedIn expands slice values in arg returning the modified query string
 // and a new arg list that can be executed within a transaction.
-func (tx *Tx) NamedIn(queryIn string, arg interface{}) (query string, args []interface{}, err error) {
+func (tx *Tx) NamedIn(queryIn string, arg any) (query string, args []any, err error) {
 	query, args, err = sqlx.Named(queryIn, arg)
 	if err == nil {
 		query, args, err = sqlx.In(query, args...)
@@ -79,7 +79,7 @@ func (tx *Tx) NamedIn(queryIn string, arg interface{}) (query string, args []int
 // NamedGetContext within a transaction.
 // Any named placeholder parameters are replaced with fields from arg.
 // An error is returned if the result set is empty.
-func (tx *Tx) NamedGetContext(ctx Ctx, dest interface{}, query string, arg interface{}) error {
+func (tx *Tx) NamedGetContext(ctx Ctx, dest any, query string, arg any) error {
 	query, args, err := tx.BindNamed(query, arg)
 	if err == nil {
 		err = tx.GetContext(ctx, dest, query, args...)
@@ -89,7 +89,7 @@ func (tx *Tx) NamedGetContext(ctx Ctx, dest interface{}, query string, arg inter
 
 // NamedSelectContext within a transaction.
 // Any named placeholder parameters are replaced with fields from arg.
-func (tx *Tx) NamedSelectContext(ctx Ctx, dest interface{}, query string, arg interface{}) error {
+func (tx *Tx) NamedSelectContext(ctx Ctx, dest any, query string, arg any) error {
 	query, args, err := tx.BindNamed(query, arg)
 	if err == nil {
 		err = tx.SelectContext(ctx, dest, query, args...)
