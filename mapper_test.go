@@ -1,9 +1,11 @@
-package sqlxx
+package sqlxx_test
 
 import (
 	"testing"
 
 	"github.com/powerman/check"
+
+	"github.com/powerman/sqlxx"
 )
 
 func TestToSnake(tt *testing.T) {
@@ -28,6 +30,6 @@ func TestToSnake(tt *testing.T) {
 		{"SomeIDOfEntity", "some_id_of_entity"},
 	}
 	for _, tc := range testCases {
-		t.Equal(ToSnake(tc.camel), tc.snake, tc.camel)
+		t.Equal(sqlxx.ToSnake(tc.camel), tc.snake, tc.camel)
 	}
 }

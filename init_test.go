@@ -1,4 +1,4 @@
-package sqlxx
+package sqlxx_test
 
 import (
 	"testing"
