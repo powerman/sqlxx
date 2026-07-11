@@ -7,8 +7,8 @@ import (
 )
 
 func TestToSnake(tt *testing.T) {
-	t := check.T(tt)
-	t.Parallel()
+	tt.Parallel()
+	t := check.Must(tt)
 
 	testCases := []struct {
 		camel string
