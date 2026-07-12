@@ -54,6 +54,7 @@ func (db *DB) NamedSelectContext(ctx Ctx, dest any, query string, arg any) error
 
 // BeginTxx begins a transaction and returns an *sqlxx.Tx instead of an *sqlx.Tx.
 func (db *DB) BeginTxx(ctx context.Context, opts *sql.TxOptions) (*Tx, error) {
+	//nolint:unqueryvet // tx ownership transfers to the caller via the wrapped return value.
 	tx, err := db.DB.BeginTxx(ctx, opts)
 	if err != nil {
 		return nil, err

@@ -10,6 +10,7 @@ func ToSnake(s string) string {
 	var res []string
 	runes := []rune(s)
 	for start := len(runes) - 1; start >= 0; start-- {
+		//nolint:copyloopvar // start is mutated below; end saves its value, not a closure copy.
 		end := start
 		lower := unicode.IsLower(runes[end])
 		for start > 0 && lower == unicode.IsLower(runes[start-1]) {
