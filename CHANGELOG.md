@@ -5,6 +5,26 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.3.0] - 2026-10-28
+
+### 🔔 Changed
+
+- Require Go 1.26 by @powerman in [1d9fa71]
+
+### 📦️ Dependencies
+
+- **(deps)** Upgrade go and golangci-lint by @powerman in [b1c7e53]
+- **(deps)** Upgrade go modules by @powerman in [5e5c249]
+- **(deps)** Upgrade go and golangci-lint by @powerman in [373d90e]
+- **(deps)** Mise up by @powerman in [e57133f]
+
+[0.3.0]: https://github.com/powerman/sqlxx/compare/v0.2.1..v0.3.0
+[b1c7e53]: https://github.com/powerman/sqlxx/commit/b1c7e53618acd1aff7f8651ffdae10cc5cabf302
+[5e5c249]: https://github.com/powerman/sqlxx/commit/5e5c24915849d03bd418e79e46e93fec2f28c7b0
+[373d90e]: https://github.com/powerman/sqlxx/commit/373d90ee318ea38956566abc83d924bd4ce76268
+[1d9fa71]: https://github.com/powerman/sqlxx/commit/1d9fa713af529ad65ced8c83ccb2d840fd562223
+[e57133f]: https://github.com/powerman/sqlxx/commit/e57133f78d1a41ae7639ab747ed479e10c39a098
+
 ## [0.2.1] - 2026-07-11
 
 ### 🔔 Changed
